@@ -10,7 +10,7 @@ class Program
         Console.WriteLine("2. Restar");
         Console.WriteLine("3. Multiplicar");
         Console.WriteLine("4. Dividir");
-
+        Console.WriteLine("5. Módulo");
         while (true)
         {
             Console.Write("Ingrese la opción (1/2/3/4): ");
@@ -36,6 +36,9 @@ class Program
                         break;
                     case "4":
                         Console.WriteLine("Resultado: " + Dividir(num1, num2));
+                        break;
+                    case "5":
+                        Console.WriteLine("Resultado: " + Modulo(num1, num2)); // Llamada al nuevo método
                         break;
                 }
             }
@@ -76,5 +79,15 @@ class Program
             return double.NaN; // Retorna NaN para indicar un error
         }
         return a / b;
+    }
+
+    static double Modulo(double a, double b) // Nueva función para el módulo
+    {
+        if (b == 0)
+        {
+            Console.WriteLine("Error: División por cero");
+            return double.NaN; // Retorna NaN para indicar un error
+        }
+        return a % b;
     }
 }
