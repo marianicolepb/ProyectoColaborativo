@@ -1,9 +1,23 @@
-﻿using System;
+using System;
 
 class Program
 {
     static void Main()
     {
+        Console.Write("Ingrese el primer número: ");
+        double num1;
+        while (!double.TryParse(Console.ReadLine(), out num1))
+        {
+            Console.Write("Entrada no válida. Ingrese un número: ");
+        }
+
+        Console.Write("Ingrese el segundo número: ");
+        double num2;
+        while (!double.TryParse(Console.ReadLine(), out num2))
+        {
+            Console.Write("Entrada no válida. Ingrese un número: ");
+        }
+
         Console.WriteLine("Bienvenido a la Calculadora");
         Console.WriteLine("Seleccione una operación:");
         Console.WriteLine("1. Sumar");
@@ -12,18 +26,21 @@ class Program
         Console.WriteLine("4. Dividir");
         Console.WriteLine("5. Módulo");
         Console.WriteLine("6. Potencia");
+        Console.WriteLine("0. Salir");
+
         while (true)
         {
-            Console.Write("Ingrese la opción (1/2/3/4): ");
+            Console.Write("Ingrese la opción (1/2/3/4/5/6): ");
             string opcion = Console.ReadLine();
 
-            if (opcion == "1" || opcion == "2" || opcion == "3" || opcion == "4")
+            if (opcion == "0")
             {
-                Console.Write("Ingrese el primer número: ");
-                double num1 = Convert.ToDouble(Console.ReadLine());
-                Console.Write("Ingrese el segundo número: ");
-                double num2 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Saliendo de la calculadora...");
+                break; // Sale del bucle y termina el programa
+            }
 
+            if (opcion == "1" || opcion == "2" || opcion == "3" || opcion == "4" || opcion == "5" || opcion == "6")
+            {
                 switch (opcion)
                 {
                     case "1":
@@ -84,7 +101,6 @@ class Program
         }
         return a / b;
     }
-
 
     static double Modulo(double a, double b) // Nueva función para el módulo
     {
