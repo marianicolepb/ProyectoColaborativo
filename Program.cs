@@ -24,11 +24,18 @@ class Program
         Console.WriteLine("2. Restar");
         Console.WriteLine("3. Multiplicar");
         Console.WriteLine("4. Dividir");
+        Console.WriteLine("0. Salir");
 
         while (true)
         {
             Console.Write("Ingrese la opción (1/2/3/4): ");
             string opcion = Console.ReadLine();
+
+            if (opcion == "0")
+            {
+                Console.WriteLine("Saliendo de la calculadora...");
+                break; // Sale del bucle y termina el programa
+            }
 
             if (opcion == "1" || opcion == "2" || opcion == "3" || opcion == "4")
             {
@@ -51,6 +58,7 @@ class Program
                     case "4":
                         Console.WriteLine("Resultado: " + Dividir(num1, num2));
                         break;
+
                 }
             }
             else
@@ -91,4 +99,6 @@ class Program
         }
         return a / b;
     }
+
+
 }
