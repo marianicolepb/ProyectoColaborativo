@@ -11,6 +11,7 @@ class Program
         Console.WriteLine("3. Multiplicar");
         Console.WriteLine("4. Dividir");
         Console.WriteLine("5. Módulo");
+        Console.WriteLine("6. Potencia");
         while (true)
         {
             Console.Write("Ingrese la opción (1/2/3/4): ");
@@ -39,6 +40,9 @@ class Program
                         break;
                     case "5":
                         Console.WriteLine("Resultado: " + Modulo(num1, num2)); // Llamada al nuevo método
+                        break;
+                    case "6":
+                        Console.WriteLine("Resultado: " + Potencia(num1, num2));
                         break;
                 }
             }
@@ -89,5 +93,10 @@ class Program
             return double.NaN; // Retorna NaN para indicar un error
         }
         return a % b;
+    }
+
+    static double Potencia(double baseNum, double exponente)
+    {
+        return Math.Pow(baseNum, exponente);
     }
 }
