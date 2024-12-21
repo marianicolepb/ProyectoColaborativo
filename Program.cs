@@ -4,6 +4,20 @@ class Program
 {
     static void Main()
     {
+        Console.Write("Ingrese el primer número: ");
+        double num1;
+        while (!double.TryParse(Console.ReadLine(), out num1))
+        {
+            Console.Write("Entrada no válida. Ingrese un número: ");
+        }
+
+        Console.Write("Ingrese el segundo número: ");
+        double num2;
+        while (!double.TryParse(Console.ReadLine(), out num2))
+        {
+            Console.Write("Entrada no válida. Ingrese un número: ");
+        }
+
         Console.WriteLine("Bienvenido a la Calculadora");
         Console.WriteLine("Seleccione una operación:");
         Console.WriteLine("1. Sumar");
